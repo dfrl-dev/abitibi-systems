@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Abitibi Systems</title>
 <meta name="description" content="Practical automation for northern operations. Quoting, job files, and field data capture for resource-sector businesses in northeastern Ontario. Cochrane, Ontario.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&display=swap" rel="stylesheet">
@@ -33,7 +36,7 @@
 
   /* Header */
   header{padding:1.4rem 0 1.1rem}
-  .masthead{display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+  .masthead{display:flex;align-items:center;justify-content:space-between;gap:1rem}
   .wordmark{
     font-variation-settings:"wdth" 125;
     font-weight:700;
@@ -42,7 +45,9 @@
     text-transform:uppercase;
     color:var(--ink);
     text-decoration:none;
+    display:inline-flex;align-items:center;gap:.4rem;
   }
+  .wordmark svg{width:1.9rem;height:1.9rem;flex:none}
   .wordmark span{color:var(--boreal)}
   .lang{
     font-size:.9rem;
@@ -150,7 +155,7 @@
 <body>
 <header>
   <div class="wrap masthead">
-    <a class="wordmark" href="#">Abitibi <span>Systems</span></a>
+    <a class="wordmark" href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M1 21 H3.5 L5 24 L6.8 5.5 L11.5 16 L12.2 9.5 L16.5 17.5 L17 13 L21 19 L21.5 16.3 L25 21 H26.5 L28 19.5 L29.5 21 H31" fill="none" stroke="#2D5038" stroke-width="2.2" stroke-linejoin="round" stroke-linecap="round"/></svg>Abitibi <span>Systems</span></a>
     <button class="lang" id="langBtn" type="button" aria-label="Changer de langue / Switch language">FR</button>
   </div>
 </header>
