@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abitibi Systems</title>
+<meta name="description" content="Practical automation for northern operations. Quoting, job files, and field data capture for resource-sector businesses in northeastern Ontario. Cochrane, Ontario.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1E2A23;
+    --paper:#FAFAF7;
+    --boreal:#2D5038;
+    --flag:#D4680E;
+    --granite:#68716B;
+    --line:#D8DCD6;
+    --measure:34rem;
+  }
+  *{box-sizing:border-box;margin:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Archivo",system-ui,sans-serif;
+    font-variation-settings:"wdth" 100;
+    font-size:1.0625rem;
+    line-height:1.6;
+  }
+  .wrap{max-width:52rem;margin:0 auto;padding:0 1.25rem}
+
+  /* Header */
+  header{padding:1.4rem 0 1.1rem}
+  .masthead{display:flex;align-items:baseline;justify-content:space-between;gap:1rem}
+  .wordmark{
+    font-variation-settings:"wdth" 125;
+    font-weight:700;
+    font-size:1.25rem;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    color:var(--ink);
+    text-decoration:none;
+  }
+  .wordmark span{color:var(--boreal)}
+  .lang{
+    font-size:.9rem;
+    background:none;border:1px solid var(--line);
+    border-radius:2px;
+    padding:.25rem .7rem;
+    font-family:inherit;color:var(--granite);
+    cursor:pointer;
+  }
+  .lang:hover{border-color:var(--granite);color:var(--ink)}
+  .lang:focus-visible,a:focus-visible{outline:2px solid var(--flag);outline-offset:3px}
+
+  /* Datum strip */
+  .datum{border-top:3px solid var(--boreal);border-bottom:1px solid var(--line)}
+  .datum .wrap{
+    display:flex;justify-content:space-between;gap:1rem;
+    padding-top:.45rem;padding-bottom:.45rem;
+    font-size:.85rem;color:var(--granite);
+    font-variation-settings:"wdth" 92;
+    letter-spacing:.02em;
+  }
+  .datum b{color:var(--boreal);font-weight:600}
+
+  /* Hero */
+  .hero{padding:4.2rem 0 3.2rem;position:relative;overflow:hidden}
+  .hero h1{
+    font-variation-settings:"wdth" 118;
+    font-weight:650;
+    font-size:clamp(1.9rem,4.6vw,3rem);
+    line-height:1.12;
+    max-width:21ch;
+    letter-spacing:-.01em;
+  }
+  .hero p{max-width:var(--measure);margin-top:1.3rem;color:var(--ink)}
+  .hero .contour{
+    position:absolute;right:-6rem;top:-2rem;width:30rem;max-width:70vw;
+    color:var(--line);pointer-events:none;
+  }
+  .hero .wrap{position:relative}
+
+  section{padding:2.6rem 0;border-top:1px solid var(--line)}
+  h2{
+    font-variation-settings:"wdth" 115;
+    font-weight:650;font-size:1.35rem;margin-bottom:1.4rem;
+    color:var(--boreal);
+  }
+  .lede{max-width:var(--measure);color:var(--granite);margin-bottom:1.6rem}
+
+  /* Work list */
+  .work dt{
+    font-weight:600;font-variation-settings:"wdth" 110;
+    margin-top:1.5rem;font-size:1.05rem;
+  }
+  .work dt:first-child{margin-top:0}
+  .work dd{max-width:var(--measure);color:var(--granite);margin-top:.3rem}
+
+  /* Process */
+  ol.process{list-style:none;counter-reset:step;max-width:var(--measure)}
+  ol.process li{
+    counter-increment:step;
+    padding:1.05rem 0 1.05rem 3.1rem;
+    position:relative;
+  }
+  ol.process li + li{border-top:1px solid var(--line)}
+  ol.process li::before{
+    content:counter(step);
+    position:absolute;left:0;top:1.05rem;
+    width:1.9rem;height:1.9rem;
+    border:1.5px solid var(--boreal);
+    border-radius:50%;
+    display:grid;place-items:center;
+    font-weight:600;font-size:.95rem;color:var(--boreal);
+  }
+  ol.process b{font-weight:600}
+  ol.process .note{color:var(--granite)}
+
+  /* Field constraints */
+  .north p{max-width:var(--measure)}
+  .north p + p{margin-top:.9rem}
+
+  /* Contact */
+  .contact p{max-width:var(--measure)}
+  .contact a{color:var(--boreal);text-decoration-color:var(--flag);text-decoration-thickness:2px;text-underline-offset:3px}
+  .contact a:hover{color:var(--flag)}
+  .contact .mail{
+    display:inline-block;margin-top:1.2rem;
+    font-variation-settings:"wdth" 112;
+    font-weight:600;font-size:1.2rem;
+  }
+  .sig{margin-top:2rem;color:var(--granite)}
+  .sig b{color:var(--ink);font-weight:600}
+
+  footer{border-top:1px solid var(--line);padding:1.3rem 0 2.6rem}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;
+    font-size:.85rem;color:var(--granite)}
+
+  [lang-alt]{display:none}
+  html[data-lang="fr"] [lang-en]{display:none}
+  html[data-lang="fr"] [lang-alt]{display:revert}
+  @media (max-width:560px){
+    .datum .wrap{flex-direction:column;gap:.1rem}
+  }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap masthead">
+    <a class="wordmark" href="#">Abitibi <span>Systems</span></a>
+    <button class="lang" id="langBtn" type="button" aria-label="Changer de langue / Switch language">FR</button>
+  </div>
+</header>
+
+<div class="datum">
+  <div class="wrap">
+    <div><b>49.07° N, 81.02° W</b> — Cochrane, Ontario</div>
+    <div lang-en>Serving operations across northeastern Ontario</div>
+    <div lang-alt lang="fr">Au service des opérations du Nord-Est ontarien</div>
+  </div>
+</div>
+
+<main>
+  <div class="hero">
+    <svg class="contour" viewBox="0 0 480 300" fill="none" aria-hidden="true">
+      <path d="M-20 240 C90 200 140 250 250 215 S430 230 500 190" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M-20 200 C80 160 160 205 260 172 S420 185 500 148" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M-20 160 C70 125 180 160 270 130 S410 142 500 108" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M-20 120 C60 92 200 118 280 90 S400 100 500 70" stroke="currentColor" stroke-width="1.5"/>
+      <path d="M-20 80 C50 60 215 78 290 52 S390 60 500 34" stroke="currentColor" stroke-width="1.5"/>
+    </svg>
+    <div class="wrap">
+      <h1 lang-en>Practical automation for northern operations.</h1>
+      <h1 lang-alt lang="fr">L'automatisation pratique pour les opérations du Nord.</h1>
+      <p lang-en>
+        Abitibi Systems builds the software layer between the work you already do and the
+        paperwork it generates — quoting, job records, invoicing, and field data capture
+        for businesses serving mining, forestry, and aviation in the north.
+      </p>
+      <p lang-alt lang="fr">
+        Abitibi Systems construit la couche logicielle entre le travail que vous faites déjà
+        et la paperasse qu'il génère — soumissions, dossiers de travaux, facturation et
+        saisie de données sur le terrain pour les entreprises au service des secteurs minier,
+        forestier et aérien du Nord.
+      </p>
+    </div>
+  </div>
+
+  <section>
+    <div class="wrap">
+      <h2 lang-en>What we build</h2>
+      <h2 lang-alt lang="fr">Ce que nous construisons</h2>
+      <dl class="work">
+        <dt lang-en>Quoting and intake</dt>
+        <dt lang-alt lang="fr">Soumissions et prise de demandes</dt>
+        <dd lang-en>Requests come in by form, email, or phone; a priced draft quote comes back the same day, reviewed and sent by your own staff.</dd>
+        <dd lang-alt lang="fr">Les demandes arrivent par formulaire, courriel ou téléphone; une soumission chiffrée revient le jour même, révisée et envoyée par votre propre équipe.</dd>
+
+        <dt lang-en>Job files and invoicing</dt>
+        <dt lang-alt lang="fr">Dossiers de travaux et facturation</dt>
+        <dd lang-en>One record per project — hours, loads, man-days, documents — feeding a single consolidated invoice instead of a month-end reconciliation.</dd>
+        <dd lang-alt lang="fr">Un dossier par projet — heures, chargements, jours-personnes, documents — menant à une facture unique plutôt qu'à une conciliation de fin de mois.</dd>
+
+        <dt lang-en>Field data capture</dt>
+        <dt lang-alt lang="fr">Saisie de données sur le terrain</dt>
+        <dd lang-en>Logs and reports dictated or photographed at the work site, held safely on the device, and synced the moment a connection exists.</dd>
+        <dd lang-alt lang="fr">Journaux et rapports dictés ou photographiés sur le chantier, conservés sur l'appareil et synchronisés dès qu'une connexion existe.</dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 lang-en>How an engagement runs</h2>
+      <h2 lang-alt lang="fr">Comment se déroule un mandat</h2>
+      <ol class="process">
+        <li>
+          <span lang-en><b>Cleanup.</b> <span class="note">A small, fixed-price first job that proves we do what we say.</span></span>
+          <span lang-alt lang="fr"><b>Mise à niveau.</b> <span class="note">Un premier mandat limité, à prix fixe, qui prouve que nous tenons parole.</span></span>
+        </li>
+        <li>
+          <span lang-en><b>Discovery.</b> <span class="note">Two weeks on site mapping how the work actually flows. You keep the written plan either way.</span></span>
+          <span lang-alt lang="fr"><b>Diagnostic.</b> <span class="note">Deux semaines sur place à cartographier le travail réel. Le plan écrit vous appartient, quoi qu'il arrive.</span></span>
+        </li>
+        <li>
+          <span lang-en><b>Build.</b> <span class="note">One workflow at a time, measured against a number we agree on before starting.</span></span>
+          <span lang-alt lang="fr"><b>Construction.</b> <span class="note">Un processus à la fois, mesuré contre un objectif fixé avant de commencer.</span></span>
+        </li>
+        <li>
+          <span lang-en><b>Support.</b> <span class="note">A phone call away, in your time zone. You own the systems and the code.</span></span>
+          <span lang-alt lang="fr"><b>Soutien.</b> <span class="note">À un coup de fil, dans votre fuseau horaire. Les systèmes et le code vous appartiennent.</span></span>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="north">
+    <div class="wrap">
+      <h2 lang-en>Built for where the work happens</h2>
+      <h2 lang-alt lang="fr">Conçu pour là où le travail se fait</h2>
+      <p lang-en>
+        Everything we ship works offline first and syncs over Starlink or one bar of cell
+        service, because that is what a drill camp or a fly-in site actually has. Documents
+        generate in English and French. Nothing goes out without a person signing off.
+      </p>
+      <p lang-alt lang="fr">
+        Tout ce que nous livrons fonctionne d'abord hors ligne et se synchronise par Starlink
+        ou une seule barre de réseau, parce que c'est la réalité d'un camp de forage ou d'un
+        site accessible par les airs. Les documents se génèrent en français et en anglais.
+        Rien ne part sans l'approbation d'une personne.
+      </p>
+    </div>
+  </section>
+
+  <section class="contact">
+    <div class="wrap">
+      <h2 lang-en>Talk to us</h2>
+      <h2 lang-alt lang="fr">Parlez-nous</h2>
+      <p lang-en>
+        If your operation runs on spreadsheets, radio calls, and one person's memory,
+        we should talk. The first conversation is free and the first job is small on purpose.
+      </p>
+      <p lang-alt lang="fr">
+        Si votre entreprise roule sur des chiffriers, des appels radio et la mémoire d'une
+        seule personne, parlons-nous. La première conversation est gratuite et le premier
+        mandat est volontairement modeste.
+      </p>
+      <a class="mail" href="mailto:dylan@abitibisystems.ca">dylan@abitibisystems.ca</a>
+      <p class="sig">
+        <span lang-en><b>Dylan Lauzon</b>, founder — born, raised, and working in Cochrane, Ontario.</span>
+        <span lang-alt lang="fr"><b>Dylan Lauzon</b>, fondateur — né, élevé et établi à Cochrane (Ontario).</span>
+      </p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Abitibi Systems, Cochrane, Ontario</div>
+    <div lang-en>Full site under construction</div>
+    <div lang-alt lang="fr">Site complet en construction</div>
+  </div>
+</footer>
+
+<script>
+  (function(){
+    var btn=document.getElementById('langBtn'),root=document.documentElement;
+    function apply(l){
+      root.setAttribute('data-lang',l);
+      root.setAttribute('lang',l);
+      btn.textContent=l==='fr'?'EN':'FR';
+      try{localStorage.setItem('abitibi-lang',l)}catch(e){}
+    }
+    var saved=null;
+    try{saved=localStorage.getItem('abitibi-lang')}catch(e){}
+    if(saved==='fr'||saved==='en'){apply(saved)}
+    else if((navigator.language||'').slice(0,2)==='fr'){apply('fr')}
+    else{apply('en')}
+    btn.addEventListener('click',function(){
+      apply(root.getAttribute('data-lang')==='fr'?'en':'fr');
+    });
+  })();
+</script>
+</body>
+</html>
