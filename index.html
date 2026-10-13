@@ -104,6 +104,18 @@
   .work dt:first-child{margin-top:0}
   .work dd{max-width:var(--measure);color:var(--granite);margin-top:.3rem}
 
+  /* Additional services */
+  .also{margin-top:2.2rem;padding-top:1.4rem;border-top:1px dashed var(--line)}
+  .also h3{
+    font-variation-settings:"wdth" 110;
+    font-weight:600;font-size:.85rem;
+    letter-spacing:.06em;text-transform:uppercase;
+    color:var(--granite);margin-bottom:.9rem;
+  }
+  .also ul{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(18rem,1fr));gap:.7rem 2rem}
+  .also li{font-size:.95rem;color:var(--granite);line-height:1.5}
+  .also li b{display:block;color:var(--ink);font-weight:600}
+
   /* Process */
   ol.process{list-style:none;counter-reset:step;max-width:var(--measure)}
   ol.process li{
@@ -219,6 +231,29 @@
         <dd lang-en>For the person running the place: mail triaged each morning, replies drafted in your own voice for your sign-off, and a one-page brief of what needs you today. Set up in person, on accounts you own.</dd>
         <dd lang-alt lang="fr">Pour la personne qui mène la barque : courrier trié chaque matin, réponses rédigées dans votre propre style pour votre approbation, et un résumé d'une page de ce qui exige votre attention aujourd'hui. Configuré en personne, sur des comptes qui vous appartiennent.</dd>
       </dl>
+
+      <div class="also">
+        <h3 lang-en>Also available</h3>
+        <h3 lang-alt lang="fr">Aussi offert</h3>
+        <ul>
+          <li>
+            <span lang-en><b>Custom apps</b> Web and mobile tools built around how your team works.</span>
+            <span lang-alt lang="fr"><b>Applications sur mesure</b> Outils Web et mobiles conçus selon la façon de travailler de votre équipe.</span>
+          </li>
+          <li>
+            <span lang-en><b>Websites</b> Clear, fast sites in English and French that you can update yourself.</span>
+            <span lang-alt lang="fr"><b>Sites Web</b> Des sites clairs et rapides, en français et en anglais, que vous pouvez mettre à jour vous-même.</span>
+          </li>
+          <li>
+            <span lang-en><b>Connecting your tools</b> Getting accounting, scheduling, and email systems to share data instead of retyping it.</span>
+            <span lang-alt lang="fr"><b>Relier vos outils</b> Faire en sorte que comptabilité, horaires et courriel partagent leurs données au lieu de tout ressaisir.</span>
+          </li>
+          <li>
+            <span lang-en><b>Moving off spreadsheets</b> Bringing records out of spreadsheets or aging software into something easier to search and keep.</span>
+            <span lang-alt lang="fr"><b>Sortir des tableurs</b> Transférer vos dossiers de tableurs ou de vieux logiciels vers un outil plus facile à consulter et à tenir à jour.</span>
+          </li>
+        </ul>
+      </div>
     </div>
   </section>
 
